@@ -5,7 +5,7 @@
 
 
 
-
+info.startCountdown(600)
 let mousex=0
 let mousey=0
 let x=0
@@ -169,6 +169,8 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     let drx=Math.cos(dr)
     let dry = Math.sin(dr)
 
+    let speed = 4
+    
     let staby = sprites.createProjectileFromSprite(img`
         ........................
         ........................
@@ -194,7 +196,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         ........................
         ........................
         ........................
-    `, bob, Math.abs(drx * (180 / Math.PI)) * Math.abs(x) / x, Math.abs(dry * (180 / Math.PI)) * Math.abs(y) / y)
+    `, bob, speed * Math.abs(drx * (180 / Math.PI)) * Math.abs(x) / x, speed * Math.abs(dry * (180 / Math.PI)) * Math.abs(y) / y)
 })
     bob.setStayInScreen(true)
     scene.setBackgroundImage(img`
